@@ -74,6 +74,8 @@ namespace Calculator
         private void AcButton_Click(object sender, RoutedEventArgs e)
         {
             resultLabel.Content = "0";
+            _result = 0;
+            _lastNumber = 0;
         }
 
         private void NegativeButton_Click(object sender, RoutedEventArgs e)
@@ -87,10 +89,14 @@ namespace Calculator
 
         private void PercentageButton_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(resultLabel.Content.ToString(), out _lastNumber))
+            if (double.TryParse(resultLabel.Content.ToString(), out double tempNumber))
             {
-                _lastNumber /= 100;
-                resultLabel.Content = _lastNumber.ToString();
+                tempNumber /= 100;
+                if (_lastNumber != 0)
+                {
+                    tempNumber *= _lastNumber;
+                }
+                resultLabel.Content = tempNumber.ToString();
             }
         }
 
@@ -173,7 +179,7 @@ namespace Calculator
                     return 0;
                 }
 
-                return n1 * n2;
+                    return n1 * n2;
             }
 
             public static double Divide(double n1, double n2)
