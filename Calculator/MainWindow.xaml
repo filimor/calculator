@@ -28,13 +28,11 @@
                Grid.ColumnSpan="4" />
         <Button x:Name="acButton" Content="AC"
                 Margin="5"
-                Grid.Row="1"
-                Click="AcButton_Click" />
+                Grid.Row="1"  />
         <Button x:Name="negativeButton"  Content="+/-"
                 Margin="5"
                 Grid.Column="1"
-                Grid.Row="1"
-                Click="NegativeButton_Click" />
+                Grid.Row="1" />
         <Button x:Name="percentageButton"  Content="%"
                 Margin="5"
                 Grid.Column="2"
@@ -45,8 +43,7 @@
                 Grid.Row="1" />
         <Button Content="7"
                 Margin="5"
-                Grid.Row="2"
-                Click="" />
+                Grid.Row="2" />
         <Button Content="8"
                 Margin="5"
                 Grid.Column="1"
